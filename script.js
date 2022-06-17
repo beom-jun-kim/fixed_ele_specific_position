@@ -2,6 +2,7 @@ $(window).scroll(function () {
     const $tabProduct = $('.ec-base-tab ul');
     const $removeEvent = $(".ec-base-tab").offset().top;
     const $scrollTop = $(window).scrollTop();
+    const $headerHeight = $("header").height();
     const $tabProductHeight = $('.ec-base-tab ul').offset().top;
 
     if (!$tabProduct.hasClass("fixed")) {
@@ -9,7 +10,7 @@ $(window).scroll(function () {
             $tabProduct.addClass("fixed")
         }
     } else {
-        if ($scrollTop <= $removeEvent) {
+        if ($scrollTop <= $removeEvent - $headerHeight) {
             $tabProduct.removeClass("fixed");
         }
     }
