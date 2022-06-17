@@ -3,15 +3,16 @@ $(window).scroll(function () {
     const $removeEvent = $(".ec-base-tab").offset().top;
     const $scrollTop = $(window).scrollTop();
     const $headerHeight = $("header").height();
-    const $tabProductHeight = $('.ec-base-tab ul').offset().top;
-
+    const $tabProductHeight = $('.ec-base-tab ul').offset().top - $headerHeight;
+    const fixedEvent = "fixed";
+    
     if (!$tabProduct.hasClass("fixed")) {
         if ($scrollTop >= $tabProductHeight) {
-            $tabProduct.addClass("fixed")
+            $tabProduct.addClass(fixedEvent)
         }
     } else {
         if ($scrollTop <= $removeEvent - $headerHeight) {
-            $tabProduct.removeClass("fixed");
+            $tabProduct.removeClass(fixedEvent);
         }
     }
 })
