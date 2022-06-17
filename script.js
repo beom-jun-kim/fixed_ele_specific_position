@@ -6,7 +6,7 @@ $(window).scroll(function () {
     const $tabProductHeight = $('.ec-base-tab ul').offset().top - $headerHeight;
     const fixedEvent = "fixed";
     
-    if (!$tabProduct.hasClass("fixed")) {
+    if (!$tabProduct.hasClass(fixedEvent)) {
         if ($scrollTop >= $tabProductHeight) {
             $tabProduct.addClass(fixedEvent)
         }
